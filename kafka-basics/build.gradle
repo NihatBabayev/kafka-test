@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.apache.kafka', name: 'kafka-clients', version: '3.7.1'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.13'
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.13'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.34'
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+}
+
+test {
+    useJUnitPlatform()
+}
